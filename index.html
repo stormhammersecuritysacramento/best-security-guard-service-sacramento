@@ -8,82 +8,95 @@
     <meta name="google-site-verification" content="pJRsul7Zn6s6qfp6WJeJcdtu76R6j0Gen7-YUd5STpk" />
     
     <style>
-        /* High-contrast, standard browser rendering rules */
-        html, body {
+        /* Modern, clean defaults */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
             background-color: #0f172a;
             color: #334155;
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         .main-wrapper {
-            padding: 30px 15px;
-            max-width: 700px;
+            padding: 40px 20px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
-        /* High-visibility white card base to guarantee text shows up */
+        /* Cleaned up content card with better shadow depth */
         .content-card {
             background-color: #ffffff;
-            border-radius: 12px;
-            padding: 35px 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            border: 4px solid #2563eb;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            border: 3px solid #2563eb;
         }
 
         .alert-badge {
             background-color: #fef3c7;
             border: 1px solid #f59e0b;
             color: #b45309;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         h1 {
             color: #0f172a;
-            font-size: 28px;
-            margin: 0 0 10px 0;
+            font-size: 26px;
+            margin: 0 0 12px 0;
             line-height: 1.2;
+            font-weight: 800;
         }
 
         .gold-title {
             color: #d97706;
             display: block;
-            font-size: 32px;
-            font-weight: bold;
-            margin-top: 5px;
+            font-size: 36px;
+            font-weight: 900;
+            margin-top: 8px;
         }
 
         p.description {
             font-size: 16px;
             color: #475569;
-            line-height: 1.5;
-            margin: 15px 0 25px 0;
+            line-height: 1.6;
+            margin: 20px 0 30px 0;
         }
 
-        /* Large, un-collapsible tactical buttons */
+        /* Enhanced interactive layout for buttons */
         .cta-btn-primary {
             display: block;
             background-color: #2563eb;
             color: #ffffff;
             text-align: center;
-            padding: 18px 20px;
+            padding: 16px 24px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
-            margin-bottom: 15px;
-            border-bottom: 3px solid #1d4ed8;
+            margin-bottom: 14px;
+            border-bottom: 4px solid #1d4ed8;
+            transition: all 0.15s ease;
         }
 
         .cta-btn-primary:hover {
             background-color: #1d4ed8;
+            transform: translateY(-1px);
+        }
+        
+        .cta-btn-primary:active {
+            transform: translateY(2px);
+            border-bottom-width: 1px;
         }
 
         .cta-btn-secondary {
@@ -91,50 +104,62 @@
             background-color: #1e293b;
             color: #ffffff;
             text-align: center;
-            padding: 15px 20px;
+            padding: 14px 24px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
+            transition: background-color 0.15s ease;
+        }
+
+        .cta-btn-secondary:hover {
+            background-color: #0f172a;
         }
 
         .section-title {
             font-size: 18px;
+            font-weight: 700;
             color: #0f172a;
             border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 6px;
-            margin-top: 25px;
-            margin-bottom: 15px;
+            padding-bottom: 8px;
+            margin-top: 32px;
+            margin-bottom: 16px;
         }
 
-        /* Standard block configuration for keywords */
+        /* Tag cloud optimization */
         .matrix-grid {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
         }
 
         .matrix-item {
-            display: inline-block;
             background-color: #f1f5f9;
             border: 1px solid #cbd5e1;
-            color: #334155;
-            padding: 5px 10px;
-            margin: 3px;
-            border-radius: 4px;
+            color: #475569;
+            padding: 6px 12px;
+            border-radius: 6px;
             font-size: 13px;
-            font-family: monospace;
+            font-weight: 500;
         }
 
         .footer-text {
             text-align: center;
-            margin-top: 30px;
-            font-size: 12px;
-            color: #94a3b8;
-            line-height: 1.4;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
         }
 
         .footer-text a {
             color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer-text a:hover {
             text-decoration: underline;
         }
     </style>
@@ -142,5 +167,40 @@
 <body>
 
     <div class="main-wrapper">
+        <div class="content-card">
+            
+            <div class="alert-badge">Active Dispatch Deployed</div>
+            
+            <h1>StormHammer Tactical Fleet Logistics <span class="gold-title">$1 Security Guard Services</span></h1>
+            
+            <p class="description">
+                Professional, dedicated commercial property patrol units and on-site asset protection deployed across Citrus Heights, California. Constant monitoring to safeguard your property lines.
+            </p>
+            
+            <!-- Replace "#" with your actual phone numbers or contact links -->
+            <a href="tel:1234567890" class="cta-btn-primary">Call Immediate Dispatch</a>
+            <a href="mailto:info@yourdomain.com" class="cta-btn-secondary">Request Rate Quote</a>
+            
+            <div class="section-title">Service Sectors</div>
+            
+            <div class="matrix-grid">
+                <span class="matrix-item">Commercial Patrol</span>
+                <span class="matrix-item">Citrus Heights CA</span>
+                <span class="matrix-item">Asset Protection</span>
+                <span class="matrix-item">Tactical Logistics</span>
+                <span class="matrix-item">Property Guard</span>
+            </div>
+            
+        </div>
+        
+        <div class="footer-text">
+            &copy; 2026 StormHammer Patrol. All rights reserved.<br>
+            Managed via <a href="https://github.com">GitHub Pages</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
         
         
